@@ -12,16 +12,16 @@ import {Center, OrbitControls} from '@react-three/drei'
 function App() {
   return (
     <>
-    <div style={{backgroundColor:'black'}}>
-      <Canvas camera={{ position: [0, 0, 6] }}>
+    <div style={{backgroundColor: "black", width: '100vw', height: '100vh', margin: 0, overflow: 'hidden' }}>
+      <Canvas camera={{ position: [0, 0, 6],fov:60 }}>
         <Center>
           <mesh>
-            <planeGeometry></planeGeometry>
-            {/* <sphereGeometry args={[5, 64, 64]} /> */}
+            <sphereGeometry args={[5, 64, 64]} />
             {/* Este material brilla en la oscuridad, no necesita luces */}
-            <meshBasicMaterial color="#0ea5e9" wireframe={true} />
+            <meshStandardMaterial emissive="#8e00b2" flatShading={true} color="#0ea5e9" wireframe={true} />
           </mesh>
           <OrbitControls />
+          <ambientLight intensity={1}/>
         </Center>
       </Canvas>
     </div>
