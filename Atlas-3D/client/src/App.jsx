@@ -8,6 +8,7 @@ import { Canvas } from '@react-three/fiber'
 // import "tailwindcss";
 import { MeshBasicMaterial } from 'three'
 import {Center, OrbitControls} from '@react-three/drei'
+import Argentina from '../Models/Model'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             {/* Este material brilla en la oscuridad, no necesita luces */}
             <meshStandardMaterial emissive="#8e00b2" flatShading={true} color="#0ea5e9" wireframe={true} />
           </mesh>
+          <Argentina scale={4} position={[1, 0, 0]} />
           <OrbitControls />
           <ambientLight intensity={1}/>
         </Center>
